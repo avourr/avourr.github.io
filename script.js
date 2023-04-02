@@ -1,18 +1,21 @@
-document.addEventListener("contextmenu", (event) => event.preventDefault());
 
-var started = false;
+<audio controls id="music">
+<source src="yam.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 
-var audio = new Audio("assets/yam.mp3");
+<p>Click the buttons to play or pause the music.</p>
+
+<button onclick="play()" type="button">Play </button>
+<button onclick="pause()" type="button">Pause</button>
+
+<script>
+var myMusic= document.getElementById("music");
 function play() {
-	started = !started;
-	if (started) {
-		audio.volume = 0.1;
-		audio.play();
-		document.getElementById("playbutton").style.display = "none";
-		document.getElementById("pausebutton").style.display = "block";
-	} else {
-		audio.pause();
-		document.getElementById("playbutton").style.display = "block";
-		document.getElementById("pausebutton").style.display = "none";
-	}
+myMusic.play();
 }
+
+function pause() {
+myMusic.pause();
+}
+</script>
